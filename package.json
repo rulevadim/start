@@ -12,7 +12,9 @@
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "gulp.spritesmith": "^6.9.0",
+    "merge-stream": "^1.0.1"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
