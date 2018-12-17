@@ -1,8 +1,10 @@
 'use strict';
 
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const browserSync = require('browser-sync');
+const gulp        = require('gulp');
+const sass        = require('gulp-sass');
+const bs          = require('browser-sync');
+const spritesmith = require('gulp.spritesmith');
+const merge       = require('merge-stream');
 
 gulp.task('sass', function(){
 	return gulp.src('dev/sass/*.sass')
@@ -12,7 +14,7 @@ gulp.task('sass', function(){
 
 gulp.task('sprite', function() {
 	var spriteData = 
-		gulp.src('dev/sprite/*.png')
+		gulp.src('dev/sprite/*.{png,jpg,jpeg}')
 			.pipe(spritesmith({
 				imgName: 'sprite.png',
 				cssName: '_sprite.sass',
@@ -30,8 +32,8 @@ gulp.task('watch', function(){
 });
 
 gulp.task('server', function(){
-	browserSync.init({server:'web'});
-	browserSync.watch('web/**/*.{html,js,css}').on('change', browserSync.reload);
+	bs.init({server:'web'});
+	bs.watch('web/**/*.{html,js,css}').on('change', bs.reload);
 });
 
 gulp.task('default', gulp.series('sprite', 'sass', gulp.parallel('watch', 'server')));
