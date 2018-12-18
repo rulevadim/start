@@ -29,6 +29,7 @@ gulp.task('sprite', function() {
 
 gulp.task('watch', function(){
 	gulp.watch('dev/sass/*.sass', gulp.series('sass'));
+	gulp.watch('dev/sprite/*.{png,jpg,jpeg}', gulp.series('sprite'));
 });
 
 gulp.task('server', function(){
