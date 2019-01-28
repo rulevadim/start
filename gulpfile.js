@@ -9,9 +9,9 @@ const gcmq        = require('gulp-group-css-media-queries');
 const newer       = require('gulp-newer');
 const autoprefix  = require('gulp-autoprefixer');
 
-let site = ''
 
-let proxy = 'http://' + site + '/';
+let site = ''
+// let proxy = 'http://' + site + '/';
 let webPath = 'D:/OpenServer/OSPanel/domains/' + site;
 let path = {
 	sass: 'dev/sass',
